@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#FFF9EF"/>
+  <g transform="translate(7 7)">
+    <circle cx="25" cy="25" r="24" fill="#F3E5C3" stroke="#C9A24D" stroke-width="2"/>
+    <path d="M12 27c4-7 9-10 13-10 4 0 8 3 12 10 0 7-6 12-12 12S12 34 12 27Z" fill="#0F3D34"/>
+    <path d="M24.5 13v11" stroke="#C9A24D" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M18 20h13" stroke="#C9A24D" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M35 14c4 2 7 5 8 9" stroke="#0F3D34" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M8 16c3 2 5 5 6 8" stroke="#0F3D34" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <text x="66" y="49" fill="#0F3D34" font-size="34" font-family="IBM Plex Sans Arabic, Tajawal, Cairo, Arial, sans-serif" font-weight="700">مقاديري</text>
+</svg>
