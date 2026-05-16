@@ -602,6 +602,7 @@ input,select,textarea{outline:none}
   gap:22px;
 }
 .footer-logo{width:180px;height:68px;object-fit:contain;object-position:right center;display:block;margin-bottom:10px}
+.footer-copy{text-align:center;padding:14px 0 6px;font-size:13px;color:var(--muted);border-top:1px solid #eadfce;margin-top:20px}
 .page-footer h4{margin:0 0 10px}
 .page-footer p,.page-footer li,.page-footer a{font-size:14px;color:#66706a}
 .page-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}

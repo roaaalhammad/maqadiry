@@ -666,6 +666,7 @@ function buildCartItem(meal, peopleCount = 1, orderNotes = "") {
     pricePerServing: meal.pricePerServing,
     peopleCount: Math.max(1, Math.min(10, Number(peopleCount) || 1)),
     image: meal.image,
+    shortDescription: meal.shortDescription,
     basicIngredients: meal.basicIngredients,
     allergens: meal.allergens,
     nutrition: meal.nutrition,
@@ -792,11 +793,11 @@ function renderCart() {
               <div class="meal-topline">
                 <div>
                   <span class="tag green">${item.category}</span>
-                  <h3 class="meal-title">${item.name}</h3>
+                  <h3 class="meal-title">${getMealCardTitle(item.name)}</h3>
                 </div>
                 <button class="button-danger" type="button" data-remove="${item.id}">إزالة</button>
               </div>
-              <p class="meal-description">مقادير طازجة ومجهزة للطبخ مع معلومات واضحة لكل حصة.</p>
+              <p class="meal-description">${item.shortDescription || getMealById(item.mealId || item.id)?.shortDescription || ""}</p>
               <div class="meal-meta">
                 <div class="mini-meta"><strong>سعر الحصة:</strong><span class="summary-value">${formatCurrency(item.pricePerServing)}</span></div>
                 <div class="mini-meta"><strong>الإجمالي:</strong><span class="summary-value">${formatCurrency(item.pricePerServing * item.peopleCount)}</span></div>
@@ -862,7 +863,7 @@ function renderCheckoutSummary() {
           ${cart.map((item) => `
             <div class="summary-item">
               <div>
-                <strong>${item.name}</strong>
+                <strong>${getMealCardTitle(item.name)}</strong>
                 <div class="hint-text"><span class="numeric">${item.peopleCount}</span> أشخاص</div>
                 ${item.orderNotes ? `<div class="hint-text">ملاحظات الطلب: ${item.orderNotes}</div>` : ""}
               </div>
@@ -946,7 +947,7 @@ function confirmationEmailPreview(order) {
         <div class="confirmation-list">
           ${order.items.map((item) => `
             <article class="confirmation-item">
-              <h4>${item.name}</h4>
+              <h4>${getMealCardTitle(item.name)}</h4>
               <p><strong>عدد الأشخاص:</strong> <span class="numeric">${item.peopleCount}</span></p>
               <p><strong>الكميات التفصيلية:</strong> ${(getMealById(item.id)?.hiddenExactQuantities || []).join("، ")}</p>
               <p><strong>خطوات التحضير:</strong> ${(getMealById(item.id)?.hiddenRecipeSteps || []).join(" / ")}</p>
@@ -1086,9 +1087,9 @@ function renderCheckoutPage(forceConfirmation = false) {
               <label for="deliveryTime">وقت التوصيل</label>
               <select class="sort-select" id="deliveryTime" name="deliveryTime">
                 <option value="">اختر وقت التوصيل</option>
-                <option value="ظهرًا" ${draft.deliveryTime === "ظهرًا" ? "selected" : ""}>ظهرًا</option>
-                <option value="عصرًا" ${draft.deliveryTime === "عصرًا" ? "selected" : ""}>عصرًا</option>
-                <option value="مساءً" ${draft.deliveryTime === "مساءً" ? "selected" : ""}>مساءً</option>
+                <option value="12 ظهرًا – 3 عصرًا" ${draft.deliveryTime === "12 ظهرًا – 3 عصرًا" ? "selected" : ""}>12 ظهرًا – 3 عصرًا</option>
+                <option value="3 عصرًا – 6 مساءً" ${draft.deliveryTime === "3 عصرًا – 6 مساءً" ? "selected" : ""}>3 عصرًا – 6 مساءً</option>
+                <option value="6 مساءً – 10 مساءً" ${draft.deliveryTime === "6 مساءً – 10 مساءً" ? "selected" : ""}>6 مساءً – 10 مساءً</option>
               </select>
             </div>
           </div>
@@ -1132,7 +1133,7 @@ function renderMealDetails() {
       <div class="empty-state card">
         <h1>الوجبة غير موجودة</h1>
         <p>تعذر العثور على الوجبة المطلوبة.</p>
-        <a class="button" href="meals.html">العودة لمقادير الوجبات</a>
+        <a class="button" href="meals.html">العودة للقائمة</a>
       </div>
     `;
     return;
@@ -1206,7 +1207,7 @@ function renderMealDetails() {
 
             <div class="details-actions">
               <button class="button" type="button" data-details-add="${meal.id}">أضف للسلة</button>
-              <a class="button-outline" href="meals.html">العودة لمقادير الوجبات</a>
+              <a class="button-outline" href="meals.html">العودة للقائمة</a>
             </div>
           </div>
         </article>

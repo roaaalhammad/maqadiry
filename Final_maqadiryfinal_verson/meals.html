@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مقاديري | مقادير الوجبات</title>
-  <meta name="description" content="مقاديري يوفر مقادير وجبات طازجة ومجهزة للطبخ حسب عدد الأشخاص، مع معلومات غذائية واضحة ووصفة تُرسل بعد الطلب.">
+  <meta name="description" content="مقاديري يوفر مقادير طازجة ومجهزة للطبخ حسب عدد الأشخاص، مع معلومات غذائية مفصلة ووصفة تُرسل بعد الطلب.">
   <link rel="icon" type="image/jpeg" href="assets/favicon.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -20,6 +20,7 @@
       </a>
       <a class="signin-pill" href="#" aria-label="تسجيل الدخول">تسجيل الدخول</a>
     </div>
+
     <nav class="nav">
       <a data-nav href="index.html">الرئيسية</a>
       <a data-nav href="meals.html">القائمة</a>
@@ -29,6 +30,7 @@
       <img class="brand-icon" src="assets/logoremove2.png" alt="مقاديري">
     </a>
   </div>
+
 </header>
 
 <main class="page-shell">
@@ -39,11 +41,13 @@
       <h1>مقادير الوجبات</h1>
       <p>اختر الوجبة المناسبة واستعرض السعر والمكونات الأساسية والقيم الغذائية قبل الطلب.</p>
     </div>
+
     <label class="search-wrap">
       <i data-lucide="search"></i>
       <input id="meal-search" type="search" placeholder="ابحث عن وجبة أو مكون...">
     </label>
   </div>
+
 
   <div class="filter-row">
     <div class="chips-wrap">
@@ -53,12 +57,14 @@
       <button class="chip" type="button" data-category="إيطالي">إيطالي</button>
       <button class="chip" type="button" data-category="آسيوي">آسيوي</button>
     </div>
+
     <select class="sort-select" id="sort-select">
       <option value="popular">الأكثر شيوعًا</option>
       <option value="low">الأقل سعرًا</option>
       <option value="prep">وقت التحضير</option>
     </select>
   </div>
+
 
   <div class="meals-layout">
     <aside class="card sidebar-filter">
@@ -69,6 +75,7 @@
         <label><input type="radio" name="prep" value="30to60"> 30–60 دقيقة</label>
         <label><input type="radio" name="prep" value="gt60"> أكثر من 60 دقيقة</label>
       </div>
+
       <h3>نطاق السعر</h3>
       <div class="filter-group">
         <label><input type="radio" name="price" value="" checked> الكل</label>
@@ -76,6 +83,7 @@
         <label><input type="radio" name="price" value="26to40"> <span class="range-values">26–40 ريال</span></label>
         <label><input type="radio" name="price" value="gt40"> أكثر من <span class="numeric">40</span> ريال</label>
       </div>
+
     </aside>
 
     <section>
@@ -83,6 +91,7 @@
       <div class="meals-grid" id="meals-grid"></div>
     </section>
   </div>
+
 </section>
 
 </main>
@@ -91,17 +100,18 @@
   <div class="container footer-grid">
     <div>
       <img class="footer-logo" src="assets/logoremove.png" alt="شعار مقاديري">
-      <p>مقادير وجبات طازجة ومجهزة للطبخ حسب عدد الأشخاص، مع معلومات غذائية واضحة ووصفة تُرسل بعد الطلب.</p>
+      <p>مقادير طازجة ومجهزة للطبخ حسب عدد الأشخاص، مع معلومات غذائية مفصلة ووصفة تُرسل بعد الطلب.</p>
     </div>
+
     <div>
       <h4>روابط سريعة</h4>
       <ul>
         <li><a href="index.html">الرئيسية</a></li>
         <li><a href="meals.html">القائمة</a></li>
         <li><a href="about.html">من نحن</a></li>
-        <li><a href="cart.html">السلة</a></li>
       </ul>
     </div>
+
     <div>
       <h4>خدمة العملاء</h4>
       <ul>
@@ -110,6 +120,7 @@
         <li>يوميًا من <span class="numeric">12</span> ظهرًا إلى <span class="numeric">10</span> مساءً</li>
       </ul>
     </div>
+
     <div>
       <h4>طرق الدفع</h4>
       <ul>
@@ -118,7 +129,9 @@
         <li>الدفع عند الاستلام</li>
       </ul>
     </div>
+
   </div>
+
 </footer>
 <div class="toast-stack"></div>
 <script src="https://unpkg.com/lucide@latest"></script>
